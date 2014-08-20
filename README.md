@@ -19,21 +19,25 @@ npm install
 
 ### middleman server
 
-- 動的にファイル生成して`localhost:4567`で確認することができる
-
 ```sh
 bundle exec middleman server
 ```
 
-### middleman build
+- 動的にファイル生成して`localhost:4567`で確認することができる
 
-- 静的html,css,jsを`build/`にビルドすることができる
+### middleman build
 
 ```sh
 bundle exec middleman build
 ```
 
+- 静的html,css,jsを`build/`にビルドすることができる
+
 ### grunt watch
+
+```sh
+grunt watch
+```
 
 - `/source/img/sprite/*.png`の画像ファイルを監視して、変更があったら自動で`/source/img/sprite.png`の生成と`/source/css/var/_sprite.scss`の生成を行う
 
@@ -42,5 +46,9 @@ bundle exec middleman build
 - `jshint`によるjsの構文チェックを行う
 
 ### grunt build
+
+```sh
+grunt build
+```
 
 - `/build/`以下のhtml整形、不要ファイル削除、jsの圧縮など本番delpoy用の細かいタスクを行う
