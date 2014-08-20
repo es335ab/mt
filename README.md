@@ -5,6 +5,7 @@
 ### Grobal install
 
 ```sh
+gem install bundler
 gem install middleman
 ```
 
