@@ -1,0 +1,12 @@
+---
+title: 'ページリスト'
+---
+
+<% blog.articles[0...150].each_with_index do |article, i| %>
+  <article class="titles">
+    <h2><a href="<%= article.url %>"><%= article.title %></a></h2>
+    <p>カテゴリー：<%= article.tags[0] %></p>
+    <p>ステータス：<%= article.tags[1] %></p>
+    <!--<%= article.summary %>-->
+  </article>
+<% end %>
