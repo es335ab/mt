@@ -106,3 +106,7 @@ configure :build do
   # Or use a different image path
   # set :http_path, "/Content/images/"
 end
+
+compass_config do |config|
+  config.output_style = :compressed
+end

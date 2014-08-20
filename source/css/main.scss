@@ -3,3 +3,8 @@
    ========================================================================== */
 
 @import "normalize";
+@import "compass";
+
+a {
+  @include pie-clearfix();
+}
