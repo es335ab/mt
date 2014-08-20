@@ -1,0 +1,116 @@
+  $icon-contributing-x: 0px;
+  $icon-contributing-y: 0px;
+  $icon-contributing-offset-x: 0px;
+  $icon-contributing-offset-y: 0px;
+  $icon-contributing-width: 21px;
+  $icon-contributing-height: 21px;
+  $icon-contributing-total-width: 63px;
+  $icon-contributing-total-height: 63px;
+  $icon-contributing-image: '../img/sprite.png';
+  $icon-contributing: 0px 0px 0px 0px 21px 21px 63px 63px '../img/sprite.png';
+  $icon-documentation-x: 21px;
+  $icon-documentation-y: 0px;
+  $icon-documentation-offset-x: -21px;
+  $icon-documentation-offset-y: 0px;
+  $icon-documentation-width: 21px;
+  $icon-documentation-height: 21px;
+  $icon-documentation-total-width: 63px;
+  $icon-documentation-total-height: 63px;
+  $icon-documentation-image: '../img/sprite.png';
+  $icon-documentation: 21px 0px -21px 0px 21px 21px 63px 63px '../img/sprite.png';
+  $icon-faq-x: 0px;
+  $icon-faq-y: 21px;
+  $icon-faq-offset-x: 0px;
+  $icon-faq-offset-y: -21px;
+  $icon-faq-width: 21px;
+  $icon-faq-height: 21px;
+  $icon-faq-total-width: 63px;
+  $icon-faq-total-height: 63px;
+  $icon-faq-image: '../img/sprite.png';
+  $icon-faq: 0px 21px 0px -21px 21px 21px 63px 63px '../img/sprite.png';
+  $icon-getting-started-x: 21px;
+  $icon-getting-started-y: 21px;
+  $icon-getting-started-offset-x: -21px;
+  $icon-getting-started-offset-y: -21px;
+  $icon-getting-started-width: 21px;
+  $icon-getting-started-height: 21px;
+  $icon-getting-started-total-width: 63px;
+  $icon-getting-started-total-height: 63px;
+  $icon-getting-started-image: '../img/sprite.png';
+  $icon-getting-started: 21px 21px -21px -21px 21px 21px 63px 63px '../img/sprite.png';
+  $icon-github-x: 42px;
+  $icon-github-y: 0px;
+  $icon-github-offset-x: -42px;
+  $icon-github-offset-y: 0px;
+  $icon-github-width: 21px;
+  $icon-github-height: 21px;
+  $icon-github-total-width: 63px;
+  $icon-github-total-height: 63px;
+  $icon-github-image: '../img/sprite.png';
+  $icon-github: 42px 0px -42px 0px 21px 21px 63px 63px '../img/sprite.png';
+  $icon-google-plus-x: 42px;
+  $icon-google-plus-y: 21px;
+  $icon-google-plus-offset-x: -42px;
+  $icon-google-plus-offset-y: -21px;
+  $icon-google-plus-width: 21px;
+  $icon-google-plus-height: 21px;
+  $icon-google-plus-total-width: 63px;
+  $icon-google-plus-total-height: 63px;
+  $icon-google-plus-image: '../img/sprite.png';
+  $icon-google-plus: 42px 21px -42px -21px 21px 21px 63px 63px '../img/sprite.png';
+  $icon-home-x: 0px;
+  $icon-home-y: 42px;
+  $icon-home-offset-x: 0px;
+  $icon-home-offset-y: -42px;
+  $icon-home-width: 21px;
+  $icon-home-height: 21px;
+  $icon-home-total-width: 63px;
+  $icon-home-total-height: 63px;
+  $icon-home-image: '../img/sprite.png';
+  $icon-home: 0px 42px 0px -42px 21px 21px 63px 63px '../img/sprite.png';
+  $icon-twitter-x: 21px;
+  $icon-twitter-y: 42px;
+  $icon-twitter-offset-x: -21px;
+  $icon-twitter-offset-y: -42px;
+  $icon-twitter-width: 21px;
+  $icon-twitter-height: 21px;
+  $icon-twitter-total-width: 63px;
+  $icon-twitter-total-height: 63px;
+  $icon-twitter-image: '../img/sprite.png';
+  $icon-twitter: 21px 42px -21px -42px 21px 21px 63px 63px '../img/sprite.png';
+  $icon-why-yeoman-x: 42px;
+  $icon-why-yeoman-y: 42px;
+  $icon-why-yeoman-offset-x: -42px;
+  $icon-why-yeoman-offset-y: -42px;
+  $icon-why-yeoman-width: 21px;
+  $icon-why-yeoman-height: 21px;
+  $icon-why-yeoman-total-width: 63px;
+  $icon-why-yeoman-total-height: 63px;
+  $icon-why-yeoman-image: '../img/sprite.png';
+  $icon-why-yeoman: 42px 42px -42px -42px 21px 21px 63px 63px '../img/sprite.png';
+
+  @mixin sprite-width($sprite) {
+    width: nth($sprite, 5);
+  }
+
+  @mixin sprite-height($sprite) {
+    height: nth($sprite, 6);
+  }
+
+  @mixin sprite-position($sprite) {
+    $sprite-offset-x: nth($sprite, 3);
+    $sprite-offset-y: nth($sprite, 4);
+    background-position: $sprite-offset-x  $sprite-offset-y;
+  }
+
+  @mixin sprite-image($sprite) {
+    $sprite-image: nth($sprite, 9);
+    background-image: url(#{$sprite-image});
+  }
+
+  @mixin sprite($sprite) {
+    @include sprite-image($sprite);
+    @include sprite-position($sprite);
+    @include sprite-width($sprite);
+    @include sprite-height($sprite);
+  }
