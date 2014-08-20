@@ -11,6 +11,11 @@
     </header>
   <%= yield %>
   <%= partial "footer" %>
+
+  <% data.page.scripts.length.times do |i| %>
+    <script src="/js/<%= data.page.scripts[i] %>"></script>
+  <% end %>
+
   </body>
 
 </html>
