@@ -1,12 +1,11 @@
 # Middleman-Blog Project
-------
 
 ##Usage
 
 ### Grobal install
 
 ```sh
-
+gem install middleman
 ```
 
 ### Local install
