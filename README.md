@@ -12,5 +12,16 @@ gem install middleman
 
 ```sh
 bundle install
+```
+
+### middleman server
+
+```sh
 bundle exec middleman server
+```
+
+### middleman build
+
+```sh
+bundle exec middleman build
 ```
