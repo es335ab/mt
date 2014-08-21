@@ -3,7 +3,7 @@ title: 'ページリスト'
 scripts: []
 ---
 
-<button id="linkChangeTrigger">リンク先を直下に変更</button>
+<button id="linkChangeTrigger">リンク先を/html/*.htmlに変更</button>
 <% blog.articles[0...150].each_with_index do |article, i| %>
   <article class="titles">
     <h2><a class="js-pageLink" href="<%= article.url %>"><%= article.title %></a></h2>
@@ -33,20 +33,31 @@ scripts: []
     return linkArr;
   };
 
-  function setLinkArr(){
+  function replaceLinkArr(){
     for(var i = 0, I = pageLink.length; i < I; i++ ){
       pageLink[i].setAttribute('href', linkArr[i]);
     };
+  };
 
-    alert('リンクの切り替え完了');
+  function setDevLinkArr(){
+    var linkStr = '';
+    linkArr = [];
+    for(var i = 0, I = pageLink.length; i < I; i++ ){
+      linkStr = pageLink[i].getAttribute('href');
+      linkStr = linkStr.replace('/', 'html/');
+      linkArr.push(linkStr);
+    };
   };
 
   //init
   getLinkArr();
+  replaceLinkArr();
 
   //evemt init
   linkChangeTrigger.addEventListener('click', function(){
-    setLinkArr();
+    setDevLinkArr();
+    replaceLinkArr();
+    alert('遷移先の切り替え完了');
   });
 
 })();
