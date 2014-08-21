@@ -19,7 +19,12 @@ module.exports = (grunt) ->
 
   # 不要ファイル削除
     clean:
-      build: ['<%= path.build %>/img/sprites/**', '<%= path.build %>/html/**']
+      build: [
+        '<%= path.build %>/img/sprites/**',
+        '<%= path.build %>/html/**',
+        '<%= path.build %>/js/common',
+        '<%= path.build %>/data/**'
+      ]
 
   # ここからbuildタスク
 
@@ -61,6 +66,15 @@ module.exports = (grunt) ->
 
   # ここからwatchタスク
 
+
+  # バックグラウンドでmiddleman serverを動かす
+    external_daemon:
+      mid_serve:
+       cmd: 'bundle'
+       args: ['exec', 'middleman', 'server']
+       options:
+         verbose: true
+
   # JS結合
     concat:
       dist:
@@ -86,6 +100,14 @@ module.exports = (grunt) ->
         algorithm: 'binary-tree'
         engine: 'pngsmith'
 
+  # middlemanの設定
+     middleman:
+      options:
+        useBundle: true
+      build:
+        options:
+          command: 'build'
+
   # ファイル変更監視
     watch:
       options:
@@ -104,4 +126,5 @@ module.exports = (grunt) ->
 
 
   # タスク定義
-  grunt.registerTask 'build', ['copy', 'prettify', 'concat', 'jshint', 'sprite', 'clean']
+  grunt.registerTask 'build', ['middleman:build', 'copy', 'prettify', 'concat', 'jshint', 'sprite', 'clean']
+  grunt.registerTask 'serve', ['external_daemon:mid_serve', 'watch']
