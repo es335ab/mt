@@ -33,5 +33,5 @@ grunt serve
 grunt build
 ```
 
-- 静的html,css,jsを`build/`にビルドすることができる
-- `/build/`以下のhtml整形、不要ファイル削除、jsの圧縮など本番delpoy用の細かいタスクを行う
+- 静的html,css,js,imgを`build/`にビルドする
+- ビルド後html整形、不要ファイル削除、jsの圧縮など本番delpoy用の細かいタスクを行う
