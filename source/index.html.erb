@@ -3,7 +3,6 @@ title: 'ページリスト'
 scripts: []
 ---
 
-<button id="linkChangeTrigger">リンク先を/html/*.htmlに変更</button>
 <% blog.articles[0...150].each_with_index do |article, i| %>
   <article class="titles">
     <h2><a class="js-pageLink" href="<%= article.url %>"><%= article.title %></a></h2>
@@ -18,7 +17,7 @@ scripts: []
 
   //vars
   var pageLink = document.getElementsByClassName('js-pageLink');
-  var linkChangeTrigger = document.getElementById('linkChangeTrigger');
+  var urlParam = location.href;console.log(urlParam);
   var linkArr = [];
 
   //subRoutine
@@ -49,16 +48,18 @@ scripts: []
     };
   };
 
+  function isDevCheck(){
+    if(urlParam.indexOf('?dev') > 0){
+      return false;
+    }
+
+    return true;
+  };
+
   //init
+  if(!isDevCheck()) return;
   getLinkArr();
   replaceLinkArr();
-
-  //evemt init
-  linkChangeTrigger.addEventListener('click', function(){
-    setDevLinkArr();
-    replaceLinkArr();
-    alert('遷移先の切り替え完了');
-  });
 
 })();
 </script>
