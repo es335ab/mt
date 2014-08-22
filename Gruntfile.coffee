@@ -93,7 +93,7 @@ module.exports = (grunt) ->
   # 画像スプライト化
     sprite:
       create:
-        src: '<%= path.src %>/img/sprites/*'
+        src: '<%= path.src %>/img/sprites/*.png'
         destImg: '<%= path.src %>/img/sprite.png'
         destCSS: '<%= path.src %>/css/var/_sprite.scss'
         imgPath: '../img/sprite.png'
@@ -113,6 +113,8 @@ module.exports = (grunt) ->
       options:
         spawn: false
       concat:
+        options:
+          livereload: false
         files: ['<%= path.src %>/js/common/*.js']
         tasks: ['concat']
       js:

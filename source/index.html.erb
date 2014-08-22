@@ -1,16 +1,47 @@
 ---
 title: 'ページリスト'
+layout: management
+css: ['bootstrap.css']
 scripts: []
 ---
 
-<% blog.articles[0...150].each_with_index do |article, i| %>
-  <article class="titles">
-    <h2><a class="js-pageLink" href="<%= article.url %>"><%= article.title %></a></h2>
-    <p>カテゴリー：<%= article.tags[0] %></p>
-    <p>ステータス：<%= article.tags[1] %></p>
-    <!--<%= article.summary %>-->
-  </article>
-<% end %>
+<table class="table table-bordered table-hover">
+  <caption><h2>ページリスト</h2></caption>
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>画面名</th>
+      <th>グループ</th>
+      <th>画面ID</th>
+      <th>ステータス</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  <% blog.articles[0...150].each_with_index do |article, i| %>
+    <tr>
+      <td class="pageId"><%= i + 1 %></td>
+      <td><a class="js-pageLink" href="<%= article.url %>"><%= article.title %></a></td>
+      <td><%= article.tags[0] %></td>
+      <td><%= article.tags[1] %></td>
+      <td><%= article.tags[2] %></td>
+    </tr>
+  <% end %>
+
+  </tbody>
+</table>
+
+<style>
+caption h2 {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1em;
+  background-color: #20aee5;
+  padding-left: 10px;
+  line-height: 30px;
+  text-align: left;
+}
+</style>
 
 <script>
 (function(){
