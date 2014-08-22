@@ -17,16 +17,15 @@ module.exports = (grunt) ->
       data: 'data'
       build: 'build'
 
-  # 不要ファイル削除
-    clean:
-      build: [
-        '<%= path.build %>/img/sprites/**',
-        '<%= path.build %>/html/**',
-        '<%= path.build %>/js/common',
-        '<%= path.build %>/data/**'
-      ]
-
   # ここからbuildタスク
+
+  # 不要ファイル削除
+    clean: [
+      '<%= path.build %>/img/sprites',
+      '<%= path.build %>/html',
+      '<%= path.build %>/js/common',
+      '<%= path.build %>/data'
+    ]
 
   # ファイルをコピー
     copy:
@@ -128,5 +127,5 @@ module.exports = (grunt) ->
 
 
   # タスク定義
-  grunt.registerTask 'build', ['middleman:build', 'copy', 'prettify', 'concat', 'jshint', 'sprite', 'clean']
+  grunt.registerTask 'build', ['middleman:build', 'copy', 'prettify', 'concat', 'sprite', 'clean']
   grunt.registerTask 'serve', ['external_daemon:mid_serve', 'watch']
