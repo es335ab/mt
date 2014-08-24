@@ -23,7 +23,7 @@ npm install
 grunt serve
 ```
 
-- `/source/img/sprite/*.png`の変更を監視し、`/source/img/sprite.png`の生成と`/source/css/var/_sprite.scss`の生成を行う
+- `/source/img/sprite/*.png`の変更を監視し、`/source/img/sprite.png`と`/source/css/var/_sprite.scss`を生成する
 - `/source/js/common/*.js`の変更を監視し、common以下のjsを結合して`/source/js/common.js`を生成する
 
 ### build
