@@ -1,4 +1,4 @@
-# Middleman & Grunt Env
+# Grunt with middleman
 
 ##Usage
 
