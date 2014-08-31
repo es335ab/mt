@@ -1,0 +1,43 @@
+---
+#### 【必須】リストで使うデータ （tags[1] -> カテゴリー, tags[2] -> 画面ID, tags[3] -> ステータス）####
+title: 遅延を予想する
+date: 0000-01-01
+layout: layout
+tags: アプリ, no-id, 着手中
+
+#### 【必須】ページでユニークで読み込むcssとjs。配列で渡してlayoutで複数ファイルの読み込みが可能 ####
+css: []
+scripts: [sub/appForecast.js]
+
+#### 【任意】ページでユニークで使えるfrontmatter ####
+
+---
+<section class="lySection lyAppForecast">
+  <h2 class="hdLv1">遅延を予想する</h2>
+  <div class="flex is-dragDrop">
+    <section class="lyDropSection is-late">
+      <h3 class="hdForecast is-late">遅延する</h3>
+      <div class="dropTarget" id="lateTarget"></div>
+    </section>
+    <div class="metroList" id="metroList">
+      <div class="metroCircle line-ginza" data-line_name="ginza">G</div>
+      <div class="metroCircle line-marunouchi" data-line_name="marunouchi">M</div>
+      <div class="metroCircle line-hibiya" data-line_name="hibiya">H</div>
+      <div class="metroCircle line-tozai" data-line_name="tozai">T</div>
+      <div class="metroCircle line-chiyoda" data-line_name="chiyoda">C</div>
+      <div class="metroCircle line-yurakucho" data-line_name="yurakucho">Y</div>
+      <div class="metroCircle line-hanzomon" data-line_name="hanzomon">H</div>
+      <div class="metroCircle line-nanboku" data-line_name="nanboku">N</div>
+      <div class="metroCircle line-fukutoshin" data-line_name="fukutoshin">F</div>
+    </div>
+    <section class="lyDropSection is-punctual">
+      <h3 class="hdForecast is-punctual">定刻通り</h3>
+      <div class="dropTarget" id="punctualTarget"></div>
+    </section>
+  </div>
+  <div class="flex is-action">
+    <p class="txt to-init">元に戻す</p>
+    <p class="btn to-entry">エントリーする</p>
+  </div>
+</section>
+
