@@ -1,0 +1,34 @@
+---
+#### 【必須】リストで使うデータ （tags[1] -> カテゴリー, tags[2] -> 画面ID, tags[3] -> ステータス）####
+title: jsonを受け取る
+date: 0000-01-01
+layout: layout
+tags: アプリ, no-id, 着手中
+
+#### 【必須】ページでユニークで読み込むcssとjs。配列で渡してlayoutで複数ファイルの読み込みが可能 ####
+css: []
+scripts: [lib/jquery.mockjax.js, mock.js, sub/metroStatus.js]
+
+#### 【任意】ページでユニークで使えるfrontmatter ####
+
+---
+<section class="lySection lyMetroStatus">
+  <h2 class="hdLv1">東京メトロの遅延状況</h2>
+  <div id="metroStatusField"></div>
+
+  <div class="flex is-action">
+    <p class="txt to-init taC">元に戻す</p>
+    <p class="btn to-entry">エントリーする</p>
+  </div>
+</section>
+
+<script type="text/template" id="metroStatusTemplate">
+  <div class="flex is-metroStatus">
+    <div class="has-metroCircle">
+      <div class="metroCircle line-{{= line }}">{{= initial_text }}</div>
+    </div>
+    <div class="has-vehicle">
+      <img data-delay_point="{{= delay }}" class="imgVehicle" src="{{= image_path }}" width="88">
+    </div>
+  </div>
+</script>
