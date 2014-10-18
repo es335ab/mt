@@ -30,6 +30,10 @@ a {
   vartical-align: top;
 }
 
+.taC {
+  text-align: center;
+}
+
 //modules
 .flex {
   width: 100%;
@@ -42,6 +46,12 @@ a {
   > ul {
     display: table-cell;
     vertical-align: middle;
+  }
+  &.is-action {
+    .txt {
+      color: $negativeColor;
+      font-weight: bold;
+    }
   }
 }
 
@@ -189,9 +199,25 @@ a {
       margin: 0 auto 2px;
     }
   }
-  .flex.is-action {
-    .txt {
-      color: $negativeColor;
+}
+
+.lyMetroStatus {
+  .flex.is-metroStatus {
+    text-align: center;
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 20px;
+    }
+  }
+  .has-metroCircle {
+    width: 46px;
+  }
+  .has-vehicle {
+    text-align: left;
+    .imgVehicle {
+      display: block;
+      transition: 300ms;
+      padding-left: 0;
     }
   }
 }
