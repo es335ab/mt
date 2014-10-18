@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <title><%= data.page.title %> | Middleman Product</title>
+  <link rel="stylesheet" href="/css/common.css">
   <link rel="stylesheet" href="/css/common.css">
   <% data.page.css.length.times do |i| %>
     <link rel="stylesheet" href="/css/<%= data.page.css[i] %>">
@@ -15,10 +16,7 @@
 </head>
 <body>
   <%= partial "layouts/partials/header" %>
-  <main class="ly-wrapper">
-    <%= partial "layouts/partials/sidebar" %>
-    <%= yield %>
-  </main><!-- / .ly-wrapper -->
+  <%= yield %>
 
   <%= partial "layouts/partials/footer" %>
 
@@ -28,6 +26,9 @@
   <!--[if lt IE 9]>
   <script src="/js/lib/jquery-1.11.1.min.js"></script>
   <![endif]-->
+  <script src="/js/lib/jquery-2.1.1.min.js"></script>
+  <script src="/js/lib/jquery-ui.min.js"></script>
+  <script src="/js/lib/jquery.ui.touch-punch.min.js"></script>
   <script src="/js/common.js"></script>
 
   <% data.page.scripts.length.times do |i| %>
